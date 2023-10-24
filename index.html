@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    
+    <!-- Site Title -->
+    <title>Dolaruco | El dólar hoy | Cotización del dólar | Precio del dólar al instante</title>
+    
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://www.dolaruco.com.ar/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dolaruco | El dólar hoy | Cotización del dólar | Precio del dólar al instante">
+    <meta property="og:description" content="Cotización del dólar | Precio del dólar al instante">
+    <meta property="og:image" content="https://dolaruco.com.ar/img/dolares.jpg">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="dolaruco.com.ar">
+    <meta property="twitter:url" content="https://www.dolaruco.com.ar/">
+    <meta name="twitter:title" content="Dolaruco | El dólar hoy | Cotización del dólar | Precio del dólar al instante">
+    <meta name="twitter:description" content="Cotización del dólar | Precio del dólar al instante">
+    <meta name="twitter:image" content="https://dolaruco.com.ar/img/dolares.jpg">
+
+    <!-- MDB icon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Custom Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+        rel="stylesheet">
+    <!-- MDB CSS -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+
+<body>
+    <main>
+        <!-- Background image -->
+        <div id="intro" class="bg-image vh-100">
+            <video style="min-width: 100%; min-height: 100%;" playsinline autoplay muted loop>
+                <source class="h-100" src="./video/video.mp4" type="video/mp4" />
+            </video>
+            <div class="mask" style="
+            background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.95),
+            rgba(25, 25, 25, 0.95) 100%
+            );
+        ">
+                <div class="container d-flex align-items-center justify-content-center text-center h-100">
+                    <div class="text-white d-flex flex-column">
+                        <span id="titulo" class="mb-3 fw-bold">{dolaruco}</span>
+                        <h1 class="mb-3 fw-bold">Dólar Blue</h1>
+                        <span class="spinner-border text-white align-self-center mb-3"></span>
+                        <div id="blueAvgContainer" class="fw-bold d-none" style="margin-top: -25px; margin-bottom: -15px;">
+                            <span style="font-size: 4rem;">AR$ </span><span id="blueAvg" style="font-size: 4rem;"></span>
+                        </div>
+                        <h6 class="fw-light m-0" style="color: rgba(255, 255, 255, 0.35);">PROMEDIO</h6>
+                        <span id="priceAvgVariation" class="small fw-bold mb-5"></span>
+                        <span class="text-white fw-bold">
+                          <span class="text-danger">AR$ </span>
+                          <div class="spinner-border text-white" role="status" style="width: 15px; height: 15px; margin-left: 5px;">
+                            <span class="visually-hidden">Loading...</span>
+                          </div>
+                          <span id="blueC" class="pe-2 me-1 border-end"></span>
+                          <span class="text-success">AR$ </span>
+                          <div class="spinner-border text-white" role="status" style="width: 15px; height: 15px; margin-left: 5px;">
+                            <span class="visually-hidden">Loading...</span>
+                          </div>
+                          <span id="blueV"></span>
+                        </span>
+                            <div class="mb-5">
+                                <span class="small" style="color: rgba(255, 255, 255, 0.35);">Última Actualización: 
+                                <div class="spinner-border text-secondary" role="status" style="width: 15px; height: 15px; margin-left: 5px;">
+                                  <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <span id="lastUpdate"></span></span>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" class="btn btn-lg btn-success" data-mdb-toggle="modal" data-mdb-target="#tModal1"><i class="fas fa-calculator me-2"></i>Simular Transacción</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Background image -->
+    </main>
+
+    <!-- Calc Modal -->
+    <div class="modal fade" id="tModal1" aria-hidden="true" aria-labelledby="tModalToggleLabel1" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success p-2">
+            <h5 class="modal-title text-white" id="tModalToggleLabel1">Simular Transacción</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex flex-column flex-lg-row justify-lg-content-start align-items-lg-center">
+                <h5 class="text-secondary m-0 me-2">Quiero cambiar</h5>
+                <div class="form-outline me-2 mt-3 mt-lg-0" style="width: 125px;">
+                    <input type="number" id="buyUsdAmount" class="form-control"/>
+                    <label class="form-label" for="form12">USD$</label>
+                </div>
+                <h5 class="text-secondary m-0 mt-4 m-lg-0 me-lg-2">al valor</h5>
+                <select id="buyUsdPrice" class="form-select mt-2 mt-lg-0" style="width: 200px;" onload="hide(this.value);" onchange="hide(this.value);">
+                    <option id="tModalBuyValue"></option>
+                    <option id="tModalAverageValue" selected></option>
+                    <option id="tModalSellValue"></option>
+                </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="txTrigger" type="button" class="btn btn-success" data-mdb-target="#tModalToggle2" data-mdb-toggle="modal" data-mdb-dismiss="modal" onclick="tCalc()">
+                Simular Transacción<i class="fas fa-angle-double-right ms-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Result Modal -->
+    <div class="modal fade" id="tModalToggle2" aria-hidden="true" aria-labelledby="tModalModalToggleLabel2" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-none">
+            <h3 class="modal-title text-muted" id="tModalModalToggleLabel2">Resultado</h3>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-0">
+            <span id="buyResult" class="badge badge-secondary py-5 m-0" style="width: 100%;"></span>
+          </div>
+          <div class="modal-footer border-none">
+            <button class="btn btn-danger" data-mdb-target="#tModal1" data-mdb-toggle="modal">
+              <i class="fas fa-angle-double-left me-2"></i>Simular otra Transacción
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+<footer>
+    <div class="small text-center" style="position: fixed; bottom: 0; left: 0; right: 0;">
+        <span style="color: rgba(255, 255, 255, 0.35);">Este sitio utiliza datos de la API pública "<a id="disclaimer-link" href="https://bluelytics.com.ar/#!/api" target="_blank" style="color: inherit;">bluelytics</a>"</span>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script type="text/javascript" src="js/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="js/site.js"></script>
+
+</html>
