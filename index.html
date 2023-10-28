@@ -43,9 +43,9 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a href="https://dolaruco.com.ar" class="text-dark" href="#" style="font-size: 1.5rem; font-weight: 900;"><span class="text-success">{</span>dolaruco<span class="text-success">}</span></a>
+                <a href="https://dolaruco.com.ar" class="text-light" href="#" style="font-size: 1.5rem; font-weight: 900;">dolaruco💸</a>
                 <div class="d-flex align-items-center">
                     <span class="text-muted" style="font-size: 75%;">
                         Desarrollado por <a href="https://matiaszozaya.com.ar" target="_blank" class="fw-bold text-success">Matías Zozaya</a>
@@ -55,64 +55,58 @@
         </nav>
     </header>
 
-    <main class="d-flex align-items-center justify-content-center">
+    <main class="d-flex align-items-center justify-content-center py-5 py-md-0">
         <div class="spinner-border text-success" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
         <div class="container d-none" id="cards-wrapper">
             <div class="row mb-3">
-                <div class="col-12 col-md my-3 my-md-0" id="blue">
-                    <div class="card">
-                        <div class="card-header fw-bold">Dólar Blue</div>
+                <div class="col-12 col-md mb-3 mb-md-0" id="blue">
+                    <div class="card bg-dark">
                         <div class="card-body">
+                            <h4 class="text-light fw-bold m-0 mb-2">Dólar Blue</h4>
                             <div class="d-flex flex-column">
-                                <div class="badge badge-success mb-3">
-                                    <span>Venta: </span>
-                                    <span id="blueVenta"></span>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="badge badge-success me-2">
+                                        <h6 class="fw-bold text-success m-0" id="blueVenta"></h6>
+                                    </div>
+                                    <h6 class="small text-danger m-0" id="blueCompra"></h6>
                                 </div>
-                                <div class="badge badge-danger mb-3">
-                                    <span>Compra: </span>
-                                    <span id="blueCompra"></span>
-                                </div>
-                                <div class="badge badge-secondary w-100" id="blueUpdate"></div>
+                                <span class="text-muted w-100" id="blueUpdate" style="font-size: 75%;"></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md mb-3 mb-md-0" id="oficial">
-                    <div class="card">
-                        <div class="card-header fw-bold">Dólar Oficial</div>
+                    <div class="card bg-dark">
                         <div class="card-body">
+                            <h4 class="text-light fw-bold m-0 mb-2">Dólar Oficial</h4>
                             <div class="d-flex flex-column">
-                                <div class="badge badge-success mb-3">
-                                    <span>Venta: </span>
-                                    <span id="oficialVenta"></span>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="badge badge-success me-2">
+                                        <h6 class="fw-bold text-success m-0" id="oficialVenta"></h6>
+                                    </div>
+                                    <h6 class="small text-danger m-0" id="oficialCompra"></h6>
                                 </div>
-                                <div class="badge badge-danger mb-3">
-                                    <span>Compra: </span>
-                                    <span id="oficialCompra"></span>
-                                </div>
-                                <div class="badge badge-secondary w-100" id="oficialUpdate"></div>
+                                <span class="text-muted w-100" id="oficialUpdate" style="font-size: 75%;"></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-md mb-3 mb-md-0" id="bolsa">
-                    <div class="card">
-                        <div class="card-header fw-bold">Dólar Bolsa</div>
+                <div class="col-12 col-md" id="bolsa">
+                    <div class="card bg-dark">
                         <div class="card-body">
+                            <h4 class="text-light fw-bold m-0 mb-2">Dólar Bolsa</h4>
                             <div class="d-flex flex-column">
-                                <div class="badge badge-success mb-3">
-                                    <span>Venta: </span>
-                                    <span id="bolsaVenta"></span>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="badge badge-success me-2">
+                                        <h6 class="fw-bold text-success m-0" id="bolsaVenta"></h6>
+                                    </div>
+                                    <h6 class="small text-danger m-0" id="bolsaCompra"></h6>
                                 </div>
-                                <div class="badge badge-danger mb-3">
-                                    <span>Compra: </span>
-                                    <span id="bolsaCompra"></span>
-                                </div>
-                                <div class="badge badge-secondary w-100" id="bolsaUpdate"></div>
+                                <span class="text-muted w-100" id="bolsaUpdate" style="font-size: 75%;"></span>
                             </div>
                         </div>
                     </div>
@@ -121,64 +115,58 @@
 
             <div class="row mb-3">
                 <div class="col-12 col-md mb-3 mb-md-0" id="ccl">
-                    <div class="card">
-                        <div class="card-header fw-bold">Dólar CCL</div>
+                    <div class="card bg-dark">
                         <div class="card-body">
+                            <h4 class="text-light fw-bold m-0 mb-2">Dólar CCL</h4>
                             <div class="d-flex flex-column">
-                                <div class="badge badge-success mb-3">
-                                    <span>Venta: </span>
-                                    <span id="cclVenta"></span>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="badge badge-success me-2">
+                                        <h6 class="fw-bold text-success m-0" id="cclVenta"></h6>
+                                    </div>
+                                    <h6 class="small text-danger m-0" id="cclCompra"></h6>
                                 </div>
-                                <div class="badge badge-danger mb-3">
-                                    <span>Compra: </span>
-                                    <span id="cclCompra"></span>
-                                </div>
-                                <div class="badge badge-secondary w-100" id="cclUpdate"></div>
+                                <span class="text-muted w-100" id="cclUpdate" style="font-size: 75%;"></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md mb-3 mb-md-0" id="solidario">
-                    <div class="card">
-                        <div class="card-header fw-bold">Dólar Solidario</div>
+                    <div class="card bg-dark">
                         <div class="card-body">
+                            <h4 class="text-light fw-bold m-0 mb-2">Dólar Solidario</h4>
                             <div class="d-flex flex-column">
-                                <div class="badge badge-success mb-3">
-                                    <span>Venta: </span>
-                                    <span id="solidarioVenta"></span>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="badge badge-success me-2">
+                                        <h6 class="fw-bold text-success m-0" id="solidarioVenta"></h6>
+                                    </div>
+                                    <h6 class="small text-danger m-0" id="solidarioCompra"></h6>
                                 </div>
-                                <div class="badge badge-danger mb-3">
-                                    <span>Compra: </span>
-                                    <span id="solidarioCompra"></span>
-                                </div>
-                                <div class="badge badge-secondary w-100" id="solidarioUpdate"></div>
+                                <span class="text-muted w-100" id="solidarioUpdate" style="font-size: 75%;"></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md" id="mayorista">
-                    <div class="card">
-                        <div class="card-header fw-bold">Dólar Mayorista</div>
+                    <div class="card bg-dark">
                         <div class="card-body">
+                            <h4 class="text-light fw-bold m-0 mb-2">Dólar Mayorista</h4>
                             <div class="d-flex flex-column">
-                                <div class="badge badge-success mb-3">
-                                    <span>Venta: </span>
-                                    <span id="mayoristaVenta"></span>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="badge badge-success me-2">
+                                        <h6 class="fw-bold text-success m-0" id="mayoristaVenta"></h6>
+                                    </div>
+                                    <h6 class="small text-danger m-0" id="mayoristaCompra"></h6>
                                 </div>
-                                <div class="badge badge-danger mb-3">
-                                    <span>Compra: </span>
-                                    <span id="mayoristaCompra"></span>
-                                </div>
-                                <div class="badge badge-secondary w-100" id="mayoristaUpdate"></div>
+                                <span class="text-muted w-100" id="mayoristaUpdate" style="font-size: 75%;"></span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="progress">
+            <div class="progress mb-2">
                 <div
                     class="progress-bar bg-success"
                     role="progressbar"
@@ -188,6 +176,10 @@
                     aria-valuemax="100">
                 </div>
             </div>
+
+            <div class="d-flex align-items-center justify-content-center">
+                <span class="text-muted" style="font-size: 75%;">Los valores se actualizarán en <span id="counter"></span> segundos</span>
+            </div>
         </div>
 
         
@@ -196,7 +188,7 @@
     <footer class="bg-dark text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-muted text-center p-3" style="font-size: 75%;">
-            © 2023 Copyright - Dolaruco.com.ar
+            © <span id="year"></span> Copyright - Dolaruco.com.ar
         </div>
         <!-- Copyright -->
     </footer>
