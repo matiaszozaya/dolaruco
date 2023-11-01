@@ -24,7 +24,7 @@
     <meta name="twitter:description" content="Cotización del dólar | Precio del dólar al instante">
     <meta name="twitter:image" content="https://dolaruco.com.ar/img/dolares.jpg">
 
-    <!-- MDB icon -->
+    <!-- Icon -->
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -35,8 +35,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
         rel="stylesheet">
-    <!-- MDB CSS -->
+    <!-- MDB ESSENTIAL -->
     <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- MDB PLUGINS -->
+    <link rel="stylesheet" href="plugins/css/all.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/site.css" />
 </head>
@@ -45,18 +47,19 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a href="https://dolaruco.com.ar" class="text-light" href="#" style="font-size: 1.5rem; font-weight: 900;">dolaruco💸</a>
+                <a href="https://dolaruco.com.ar" class="text-light" href="#"
+                    style="font-size: 1.5rem; font-weight: 900;">dolaruco💸</a>
                 <div class="d-flex align-items-center">
-                    <span class="text-muted" style="font-size: 75%;">
-                        Desarrollado por <a href="https://matiaszozaya.com.ar" target="_blank" class="fw-bold text-success">Matías Zozaya</a>
-                    </span>
+                    <button type="button" class="btn btn-success" data-mdb-toggle="modal" data-mdb-target="#dollar-chart-modal">
+                        <i class="fas fa-calendar"></i>
+                    </button>
                 </div>
             </div>
         </nav>
     </header>
 
     <main class="d-flex align-items-center justify-content-center py-5 py-md-0">
-        <div class="spinner-border text-success" role="status">
+        <div id="main-spinner" class="spinner-border text-success" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
         <div class="container d-none" id="cards-wrapper">
@@ -167,36 +170,53 @@
             </div>
 
             <div class="progress mb-2">
-                <div
-                    class="progress-bar bg-success"
-                    role="progressbar"
-                    style="width: 100%;"
-                    aria-valuenow="100"
-                    aria-valuemin="0"
-                    aria-valuemax="100">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100"
+                    aria-valuemin="0" aria-valuemax="100">
                 </div>
             </div>
 
             <div class="d-flex align-items-center justify-content-center">
-                <span class="text-muted" style="font-size: 75%;">Los valores se actualizarán en <span id="counter"></span> segundos</span>
+                <span class="text-muted" style="font-size: 75%;">Los valores se actualizarán en <span
+                        id="counter"></span> segundos</span>
             </div>
         </div>
 
-        
+        <!-- Modal -->
+        <div class="modal fade" id="dollar-chart-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="chart-spinner" class="spinner-border text-success" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <canvas id="dollar-chart" class="d-none"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
     </main>
 
     <footer class="bg-dark text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-muted text-center p-3" style="font-size: 75%;">
-            © <span id="year"></span> Copyright - Dolaruco.com.ar
+            © <span id="year"></span> Dolaruco.com.ar | 
+            <span class="text-muted">
+                Desarrollado por <a href="https://matiaszozaya.com.ar" target="_blank"
+                    class="fw-bold text-success">Matías Zozaya</a>
+            </span>
         </div>
         <!-- Copyright -->
     </footer>
 </body>
 
-<!-- Scripts -->
+<!-- JQuery -->
 <script type="text/javascript" src="js/jquery-3.6.3.min.js"></script>
+<!-- MDB ESSENTIAL -->
 <script type="text/javascript" src="js/mdb.min.js"></script>
+<!-- MDB PLUGINS -->
+<script type="text/javascript" src="plugins/js/all.min.js"></script>
+<!-- My Script -->
 <script type="text/javascript" src="js/site.js"></script>
 
 </html>
