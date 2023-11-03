@@ -50,7 +50,7 @@
                 <a href="https://dolaruco.com.ar" class="text-light" href="#"
                     style="font-size: 1.5rem; font-weight: 900;">dolaruco💸</a>
                 <div class="d-flex align-items-center">
-                    <button type="button" class="btn btn-success" data-mdb-toggle="modal" data-mdb-target="#dollar-chart-modal">
+                    <button type="button" class="btn btn-sm btn-success" data-mdb-toggle="modal" data-mdb-target="#dollar-chart-modal">
                         <i class="fas fa-calendar"></i>
                     </button>
                 </div>
@@ -67,6 +67,7 @@
                 <div class="col-12 col-md mb-3 mb-md-0" id="blue">
                     <div class="card bg-dark">
                         <div class="card-body">
+                            <img class="mb-1" width="24" height="24" src="https://img.icons8.com/emoji/24/dollar-banknote-emoji.png" alt="dollar-banknote-emoji"/>
                             <h4 class="text-light fw-bold m-0 mb-2">Dólar Blue</h4>
                             <div class="d-flex flex-column">
                                 <div class="d-flex align-items-center mb-2">
@@ -81,18 +82,19 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md mb-3 mb-md-0" id="oficial">
+                <div class="col-12 col-md mb-3 mb-md-0" id="cripto">
                     <div class="card bg-dark">
                         <div class="card-body">
-                            <h4 class="text-light fw-bold m-0 mb-2">Dólar Oficial</h4>
+                            <img class="mb-1" width="24" height="24" src="https://img.icons8.com/dusk/64/binance.png" alt="binance"/>
+                            <h4 class="text-light fw-bold m-0 mb-2">Dólar Cripto</h4>
                             <div class="d-flex flex-column">
                                 <div class="d-flex align-items-center mb-2">
                                     <div class="badge badge-success me-2">
-                                        <h6 class="fw-bold text-success m-0" id="oficialVenta"></h6>
+                                        <h6 class="fw-bold text-success m-0" id="criptoVenta"></h6>
                                     </div>
-                                    <h6 class="small text-danger m-0" id="oficialCompra"></h6>
+                                    <h6 class="small text-danger m-0" id="criptoCompra"></h6>
                                 </div>
-                                <span class="text-muted w-100" id="oficialUpdate" style="font-size: 75%;"></span>
+                                <span class="text-muted w-100" id="criptoUpdate" style="font-size: 75%;"></span>
                             </div>
                         </div>
                     </div>
@@ -101,6 +103,7 @@
                 <div class="col-12 col-md" id="bolsa">
                     <div class="card bg-dark">
                         <div class="card-body">
+                            <img class="mb-1" width="24" height="24" src="https://img.icons8.com/office/16/money-bag.png" alt="money-bag"/>
                             <h4 class="text-light fw-bold m-0 mb-2">Dólar Bolsa</h4>
                             <div class="d-flex flex-column">
                                 <div class="d-flex align-items-center mb-2">
@@ -120,6 +123,7 @@
                 <div class="col-12 col-md mb-3 mb-md-0" id="ccl">
                     <div class="card bg-dark">
                         <div class="card-body">
+                            <img class="mb-1" width="24" height="24" src="https://img.icons8.com/color/24/total-sales-1.png" alt="total-sales-1"/>
                             <h4 class="text-light fw-bold m-0 mb-2">Dólar CCL</h4>
                             <div class="d-flex flex-column">
                                 <div class="d-flex align-items-center mb-2">
@@ -134,18 +138,19 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md mb-3 mb-md-0" id="solidario">
+                <div class="col-12 col-md mb-3 mb-md-0" id="oficial">
                     <div class="card bg-dark">
                         <div class="card-body">
-                            <h4 class="text-light fw-bold m-0 mb-2">Dólar Solidario</h4>
+                            <img class="mb-1" width="24" height="24" src="https://img.icons8.com/fluency/24/robber.png" alt="robber"/>
+                            <h4 class="text-light fw-bold m-0 mb-2">Dólar Oficial</h4>
                             <div class="d-flex flex-column">
                                 <div class="d-flex align-items-center mb-2">
                                     <div class="badge badge-success me-2">
-                                        <h6 class="fw-bold text-success m-0" id="solidarioVenta"></h6>
+                                        <h6 class="fw-bold text-success m-0" id="oficialVenta"></h6>
                                     </div>
-                                    <h6 class="small text-danger m-0" id="solidarioCompra"></h6>
+                                    <h6 class="small text-danger m-0" id="oficialCompra"></h6>
                                 </div>
-                                <span class="text-muted w-100" id="solidarioUpdate" style="font-size: 75%;"></span>
+                                <span class="text-muted w-100" id="oficialUpdate" style="font-size: 75%;"></span>
                             </div>
                         </div>
                     </div>
@@ -154,6 +159,7 @@
                 <div class="col-12 col-md" id="mayorista">
                     <div class="card bg-dark">
                         <div class="card-body">
+                            <img class="mb-1" width="24" height="24" src="https://img.icons8.com/color/24/food-receiver.png" alt="food-receiver"/>
                             <h4 class="text-light fw-bold m-0 mb-2">Dólar Mayorista</h4>
                             <div class="d-flex flex-column">
                                 <div class="d-flex align-items-center mb-2">
@@ -190,7 +196,7 @@
                     <div id="chart-spinner" class="spinner-border text-success" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
-                    <canvas id="dollar-chart" class="d-none"></canvas>
+                    <canvas id="dollar-blue-chart" class="d-none"></canvas>
                 </div>
             </div>
         </div>

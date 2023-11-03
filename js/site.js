@@ -1,25 +1,24 @@
-// MAIN Height calc
-$("main").css("min-height", "calc(100% - " + ($("header").height() + $("footer").height()) + "px)");
-
 // Keep Year Updated on Footer
 $("#year").text(new Date().getFullYear());
 
+// MAIN Height Calc
+$("main").css("min-height", "calc(100% - " + ($("header").height() + $("footer").height()) + "px)");
+
 // Document Ready
 $(document).ready(function () {
+    // MAIN Height Calc on Window Resize
     $(window).on("resize", function () {
         $("main").css("min-height", "calc(100% - " + ($("header").height() + $("footer").height()) + "px)");
     });
 });
 
-// Last Prices URL
+// Last Prices API URL
 var apiURL = 'https://dolarapi.com/v1/dolares';
-
-// Global variables
-var progress = 100;
-var counter = 60;
+var apiCriptoURL = 'https://criptoya.com/api/binance/usdt/ars/1';
 
 // Fetch function
 function getDolares() {
+    //Dolares Fiat
     let dolares = {};
 
     fetch(apiURL)
@@ -50,10 +49,6 @@ function getDolares() {
             $("#cclVenta").text("AR$ " + dolares["Contado con liquidación"].venta);
             $("#cclUpdate").text(dolares["Contado con liquidación"].fechaActualizacion + " - " + dolares["Contado con liquidación"].horaActualizacion);
 
-            $("#solidarioCompra").text("AR$ " + dolares.Oficial.compra);
-            $("#solidarioVenta").text("AR$ " + dolares["Solidario (Turista)"].venta);
-            $("#solidarioUpdate").text(dolares["Solidario (Turista)"].fechaActualizacion + " - " + dolares["Solidario (Turista)"].horaActualizacion);
-
             $("#mayoristaCompra").text("AR$ " + dolares.Mayorista.compra);
             $("#mayoristaVenta").text("AR$ " + dolares.Mayorista.venta);
             $("#mayoristaUpdate").text(dolares.Mayorista.fechaActualizacion + " - " + dolares.Mayorista.horaActualizacion);
@@ -64,26 +59,19 @@ function getDolares() {
             console.log(dolares);
             console.log(counter);
         });
+    
+    // Dolares Crypto
+    fetch(apiCriptoURL)
+        .then(response => response.json())
+        .then(data => {
+            $("#criptoCompra").text("ARS$ " + data["totalBid"].toFixed(2));
+            $("#criptoVenta").text("ARS$ " + data["totalAsk"].toFixed(2));
+            $("#criptoUpdate").text(new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString() + " (Binance)");
+        });
 };
 getDolares();
 
-// Progress Bar & Fetch Reload
-setInterval(function () {
-    if (counter == 0) {
-        progress = 100;
-        counter = 60;
-        getDolares()
-    } else {
-        $("#counter").text(counter);
-        progress = progress - 1.66;
-        counter--;
-    };
-
-    $(".progress-bar").css("width", `${progress}` + "%");
-    $(".progress-bar").attr("aria-valuenow", `${progress}`);
-}, 1000);
-
-// Chart Historical Values
+// Historical Values Chart
 function getHistoricalValues() {
     fetch("https://api.bluelytics.com.ar/v2/evolution.json?days=180")
         .then(response => response.json())
@@ -107,17 +95,37 @@ function getHistoricalValues() {
                     labels: dates,
                     datasets: [
                         {
-                            label: 'Precios Históricos',
+                            label: 'Dolar Blue - ARS$',
                             data: values,
                         },
                     ],
                 },
             };
 
-            new mdb.Chart(document.getElementById('dollar-chart'), dataLine);
+            new mdb.Chart(document.getElementById('dollar-blue-chart'), dataLine);
 
             $("#chart-spinner").addClass("d-none");
-            $("#dollar-chart").removeClass("d-none");
+            $("#dollar-blue-chart").removeClass("d-none");
         });
 };
 getHistoricalValues();
+
+// Progress Bar & Fetch Reload
+
+var progress = 100;
+var counter = 60;
+
+setInterval(function () {
+    if (counter == 0) {
+        progress = 100;
+        counter = 60;
+        getDolares()
+    } else {
+        $("#counter").text(counter);
+        progress = progress - 1.66;
+        counter--;
+    };
+
+    $(".progress-bar").css("width", `${progress}` + "%");
+    $(".progress-bar").attr("aria-valuenow", `${progress}`);
+}, 1000);
